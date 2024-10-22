@@ -12,7 +12,7 @@ The `sampling.py` file has the following two parameters:
 Run the program using:
 
 ```sh
-python examples/sampling/sampling.py
+python examples/sampling/sampling.py -n 10 -t
 ```
 
 ### Explaination
@@ -23,9 +23,13 @@ Any qubit can be represented as a weighted combination of |0> and |1> computatio
 
 > q = α |0> + β |1>
 
+When we measure a qubit, we get 0 with |α|<sup>2</sup> probability and 1 with a probability of |β|<sup>2</sup> measure amplitude.
+
 For a multi-qubit system, the state vector is calculated through the Kronecker product of all qubits within the system.
 
 > q<sub>n</sub> = q<sub>1</sub> ⊗ q<sub>2</sub> ⊗ ... ⊗ q<sub>n</sub>
+
+For example, a 2-qubit system will have the state vector as [α<sub>1</sub>α<sub>2</sub>, α<sub>1</sub>β<sub>2</sub>, β<sub>1</sub>α<sub>2</sub>, β<sub>1</sub>β<sub>2</sub>] which on measuring will give [00, 01, 10, 11] respectively with some probability.
 
 We can calulate the probability of each state by using the amplitude of each state |q<sub>i</sub>|<sup>2</sup>.
 

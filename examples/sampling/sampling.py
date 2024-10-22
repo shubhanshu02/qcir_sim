@@ -22,10 +22,10 @@ def sample_vector_state(sim: qcir_sim.VectorSimulation, num_samples):
     """Sample the state vector of a quantum system"""
 
     state_vector = sim.vector_state
-    # Vector state represents all possible states of a 3-qubit system
+    # Vector state represents all possible states of a n-qubit system
     # psi^2 represents the probability of each state
     probabilities = np.abs(state_vector) ** 2
-    # Each state can be understood as 3-digit binary number
+    # Each state can be understood as n-digit binary number
     states = np.arange(len(state_vector))
     print(f"Probabilities: {probabilities}")
     for _ in range(num_samples):
