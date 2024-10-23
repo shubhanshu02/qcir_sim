@@ -15,7 +15,7 @@ Run the program using:
 python examples/sampling/sampling.py -n 10 -t
 ```
 
-### Explaination
+### Explanation
 
 In a vector simulation of a n-qubit system, each element describes a possible combination of the state of qubit. For n-qubits, the state vector will have 2^n states.
 
