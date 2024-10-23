@@ -66,7 +66,7 @@ class VectorSimulation(QuantumSimulation):
             # No need to matrix multiplication
             return
 
-        self.vector_state = np.matmul(self.vector_state, gate_matrix)
+        self.vector_state = np.matmul(gate_matrix, self.vector_state)
 
 
 class TensorSimulation(QuantumSimulation):
@@ -127,4 +127,4 @@ class TensorSimulation(QuantumSimulation):
             return
 
         # print(self.tensor_state.shape, gate_matrix.shape)
-        self.tensor_state = np.einsum("ik,ikj->ij", self.tensor_state, gate_matrix)
+        self.tensor_state = np.einsum("ikj,ik->ij", gate_matrix, self.tensor_state)
